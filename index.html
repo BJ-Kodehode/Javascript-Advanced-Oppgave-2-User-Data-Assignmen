@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Tracking Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="form-section">
+      <h2>Add/Edit Book</h2>
+      <form id="bookForm">
+        <input type="hidden" id="bookId" />
+        <input type="text" id="title" placeholder="Title" required />
+        <input type="text" id="author" placeholder="Author" required />
+        <input type="text" id="genre" placeholder="Genre" required />
+        <input type="number" id="pages" placeholder="Pages" required />
+        <input
+          type="number"
+          id="rating"
+          placeholder="Rating (1-5)"
+          min="1"
+          max="5"
+        />
+        <button type="submit">Save</button>
+      </form>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="search" placeholder="Search..." />
+      <select id="filterGenre">
+        <option value="">All Genres</option>
+      </select>
+      <select id="sortBy">
+        <option value="title">Sort by Title</option>
+        <option value="author">Sort by Author</option>
+        <option value="pages">Sort by Pages</option>
+        <option value="rating">Sort by Rating</option>
+      </select>
+      <button id="clearAll">Clear All Books</button>
+    </div>
+
+    <div id="bookList"></div>
+
+    <div class="stats">
+      <h2>Statistics</h2>
+      <p>Total Books: <span id="totalBooks">0</span></p>
+      <p>Total Pages: <span id="totalPages">0</span></p>
+      <p>Average Rating: <span id="avgRating">0</span></p>
+      <div id="genreStats"></div>
+    </div>
+  </body>
+</html>
